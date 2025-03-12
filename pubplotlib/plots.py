@@ -30,6 +30,7 @@ def PrettyMatplotlib(fig_font_scale=1.0, minor_tick_size=0.5, major_tick_size=1.
 
     # Number of minor ticks
     mpl.rcParams['xtick.minor.visible'] = True
+    #just a comment
     mpl.rcParams['ytick.minor.visible'] = True
     mpl.rcParams['xtick.minor.top'] = True
     mpl.rcParams['ytick.minor.right'] = True
