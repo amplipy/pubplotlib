@@ -147,8 +147,11 @@ def plot_array(arr, **kwargs):
         a2 = params['ax']
     
     if params['color'] is None:
-        viridis = sns.color_palette(params['cmap'], as_cmap=True)
-        colors = viridis(np.linspace(0.1, 1, len(arr)))
+        if isinstance(params['cmap'], str):
+            viridis = sns.color_palette(params['cmap'], as_cmap=True)
+            colors = viridis(np.linspace(0.1, 1, len(arr)))
+        elif isinstance(params['cmap'], mpl.colors.Colormap):
+            colors = params['cmap']
     else:
         colors = [params['color']] * len(arr)
 
